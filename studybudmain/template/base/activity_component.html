@@ -2,7 +2,7 @@
 <hr>
 {% for message in room_messages %}
     <div>
-        <small>@{{message.user}}</a>  {{message.creted | timesince}} ago</small>
+        <small><a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a>  {{message.creted | timesince}} ago</small>
         <small>replied to "{{message.room}}"</small>
 
         <p>{{message}}</p> <!-- not message.body to limit the characters it will show, refer to line 39 in models.py to see the limit -->
